@@ -1,3 +1,3 @@
-# Music App Mockup
+# Spectre
 
 todo: complete readme
