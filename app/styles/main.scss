@@ -1,0 +1,121 @@
+@import "bourbon";
+@import "neat";
+
+$global-font-family: "Roboto", sans-serif;
+$global-shadow: 0 2px 3px rgba(black, .1);
+
+html, body {
+  font-size: 16px;
+  font-family: $global-font-family;
+  background: #49688a;
+  padding: 0;
+  margin: 0;
+  color: white;
+  cursor: default;
+}
+
+.app {
+  @include flex-direction(column);
+  @include display(flex);
+  width: 100vw;
+  height: 100vh;
+}
+
+.titlebar {
+  @include display(flex);
+  @include flex-direction(row);
+  @include align-items(flex-start);
+  @include justify-content(center);
+  @include linear-gradient(rgba(black, .33), rgba(black, 0) 65%);
+  position: fixed;
+  -webkit-app-region: drag;
+  height: 2rem;
+  width: 100vw;
+  background-color: transparent;
+  -webkit-user-select: none;
+
+  .title {
+    position: relative;
+    top: -.2em;
+    font-size: .9em;
+    font-weight: normal;
+    text-shadow: $global-shadow;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $global-font-family;
+  text-shadow: $global-shadow;
+}
+
+.window-control {
+  @include transition(ease 80ms all);
+  display: inline-block;
+  height: .813rem;
+  width: .813rem;
+  background: rgba(white, .5);
+  border-radius: .813rem;
+  margin-right: .5rem;
+  -webkit-app-region: no-drag;
+
+  &.close {
+    background: rgba(tomato, 1);
+  }
+
+  &.min {
+    background: rgba(#e8cb5c, 1);
+  }
+
+  &.max {
+    background: rgba(#4fda6b, 1);
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 2px rgba(white, .25), $global-shadow;
+  }
+}
+
+.content {
+  @include flex(1);
+  @include display(flex);
+  @include flex-direction(row);
+}
+
+.navbar {
+  @include linear-gradient(rgba(black, 0), rgba(black, 0.25));
+  @include align-items(flex-start);
+  margin-top: 2.25rem;
+  padding: 0 0 0 0;
+  width: 16rem;
+  background-color: transparent;
+
+  header {
+    text-align: center;
+    color: rgba(white, .5);
+    text-shadow: $global-shadow;
+    font-size: .75em;
+    margin-bottom: 1rem;
+  }
+}
+
+.navitem {
+  a {
+    color: rgba(white, .8);
+    text-decoration: none;
+  }
+
+  &.settings {
+    @include align-self(flex-end);
+  }
+}
+
+.main-content {
+  @include flex(1);
+  margin: 3.25rem 0 0 0;
+}
+
+.activity-bar {
+  @include linear-gradient(90deg, rgba(black, 0), rgba(black, .5));
+  width: 18rem;
+  background-color: rgba(black, .25);
+}

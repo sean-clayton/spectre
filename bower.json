@@ -1,0 +1,23 @@
+{
+  "name": "spectre",
+  "version": "0.0.0",
+  "authors": [
+    "Sean Clayton <clayton.sean@gmail.com>"
+  ],
+  "description": "App for destiny",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "destiny"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

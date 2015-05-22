@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="app">
+      <div class="titlebar">
+        <div class="window-controls">
+          <div class="window-control close"></div>
+          <div class="window-control min"></div>
+          <div class="window-control max"></div>
+        </div>
+        <h1 class="title">Spectre</h1>
+      </div>
+      <section class="content">
+        <nav class="navbar">
+          <header>NAVIGATION</header>
+          <div class="navitem dashboard">
+            <a href="#">
+              <span class="icon"><img src="" alt="Dashboard Icon" /></span>
+              Dashboard
+            </a>
+          </div>
+          <div class="navitem stats">
+            <a href="#">
+              <span class="icon"><img src="" alt="Stats Icon" /></span>
+              Stats
+            </a>
+          </div>
+          <div class="navitem vendors">
+            <a href="#">
+              <span class="icon"><img src="" alt="Vendors Icon" /></span>
+              Vendors
+            </a>
+          </div>
+          <div class="navitem grimoire">
+            <a href="#">
+              <span class="icon"><img src="" alt="Grimoire Icon" /></span>
+              Grimoire
+            </a>
+          </div>
+          <div class="navitem clan">
+            <a href="#">
+              <span class="icon"><img src="" alt="Clan Icon" /></span>
+              Clan
+            </a>
+          </div>
+          <div class="navitem groups">
+            <a href="#">
+              <span class="icon"><img src="" alt="Groups Icon" /></span>
+              Groups
+            </a>
+          </div>
+          <div class="navitem friends">
+            <a href="#">
+              <span class="icon"><img src="" alt="Friends Icon" /></span>
+              Friends
+            </a>
+          </div>
+          <div class="navitem settings">
+            <a href="#">
+              <span class="icon"><img src="" alt="Settings Icon"></span>
+              Settings
+            </a>
+          </div>
+        </nav>
+        <section class="main-content"></section>
+        <aside class="activity-bar"></aside>
+      </section>
+    </div>
+    <script src="bootstrap.js"></script>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Roboto:400,300italic,300,100italic,100,400italic,700,700italic,900,900italic,500italic,500:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+  </body>
+</html>
