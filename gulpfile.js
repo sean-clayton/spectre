@@ -16,7 +16,6 @@ var uglify = require('gulp-uglify');
 
 var o = {
   scss: 'app/styles/*.scss',
-  bundle: 'app.js',
   distJs: 'dist/app/js',
   distCss: 'dist/app/css'
 };

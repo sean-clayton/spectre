@@ -281,6 +281,6 @@ app.on('ready', function () {
   mainWindow.on('closed', function () {
     // deref the window
     // for multiple windows store them in an array
-    mainWindow = null;
+    app.quit;
   });
 });
