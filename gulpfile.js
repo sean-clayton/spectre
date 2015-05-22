@@ -15,7 +15,6 @@ var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 
 var o = {
-  jsx: 'app/scripts/app.jsx',
   scss: 'app/styles/*.scss',
   bundle: 'app.js',
   distJs: 'dist/app/js',
@@ -27,7 +26,7 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('copy', function () {
-  return gulp.src(['app/index.html', 'app/index.js', 'package.json', 'app/bootstrap.js', 'config.json'])
+  return gulp.src(['app/index.html', 'app/index.js', 'package.json', 'app/app.js', 'config.json'])
     .pipe(gulp.dest('dist/app'));
 });
 
