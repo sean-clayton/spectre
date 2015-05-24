@@ -5,6 +5,8 @@ const BrowserWindow = require('browser-window');
 const Menu = require('menu');
 const MenuItem = require('menu-item');
 
+var config = require('./config.json');
+
 // report crashes to the Electron project
 require('crash-reporter').start();
 
@@ -18,13 +20,13 @@ app.on('window-all-closed', function () {
 
 app.on('ready', function () {
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 768,
-    "min-width": 320,
-    "min-height": 26,
-    resizable: true,
-    frame: false,
-    "standard-window": false
+    "width": 1280,
+    "height": 768,
+    "min-width": 800,
+    "min-height": 600,
+    "resizable": true,
+    "frame": false,
+    "title": config.name || "App name"
   });
 
   mainWindow.loadUrl(`file://${__dirname}/index.html`);

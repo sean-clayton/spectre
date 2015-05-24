@@ -3,8 +3,30 @@
 
 $global-font-family: "Roboto", sans-serif;
 $global-shadow: 0 2px 3px rgba(black, .1);
+$global-transition: 240ms $ease-out-cubic all;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #49688a;
+}
+
+body {
+  @include transition($global-transition);
+  opacity: 0;
+}
+
+.wf-active, .wf-inactive {
+  body {
+    opacity: 1;
+  }
+}
 
 html, body {
+  height: 100%;
+  overflow: hidden;
   font-size: 16px;
   font-family: $global-font-family;
   background: #49688a;
@@ -26,7 +48,7 @@ html, body {
   @include flex-direction(row);
   @include align-items(flex-start);
   @include justify-content(center);
-  @include linear-gradient(rgba(black, .33), rgba(black, 0) 65%);
+  @include linear-gradient(rgba(black, .5), rgba(black, 0) 75%);
   position: fixed;
   -webkit-app-region: drag;
   height: 2rem;
@@ -40,6 +62,7 @@ html, body {
     font-size: .9em;
     font-weight: normal;
     text-shadow: $global-shadow;
+    text-transform: uppercase;
   }
 }
 
@@ -49,13 +72,15 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .window-control {
-  @include transition(ease 80ms all);
+  $size: .75rem;
+  @include transition($global-transition);
   display: inline-block;
-  height: .813rem;
-  width: .813rem;
+  height: $size;
+  width: $size;
   background: rgba(white, .5);
-  border-radius: .813rem;
+  border-radius: $size;
   margin-right: .5rem;
+  box-shadow: inset 0 0 0 1.5px rgba(white, 0), 0 0 0 rgba(black, 0);
   -webkit-app-region: no-drag;
 
   &.close {
@@ -71,7 +96,7 @@ h1,h2,h3,h4,h5,h6 {
   }
 
   &:hover {
-    box-shadow: inset 0 0 0 2px rgba(white, .25), $global-shadow;
+    box-shadow: inset 0 0 0 1.5px rgba(white, .5), $global-shadow;
   }
 }
 
@@ -82,14 +107,22 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .navbar {
+  @media screen and (min-width: 1024px) { width: 16rem; }
+  @media screen and (max-width: 1024px) { width: 3rem; }
   @include linear-gradient(rgba(black, 0), rgba(black, 0.25));
   @include align-items(flex-start);
+  @include transition($global-transition);
   margin-top: 2.25rem;
+  position: relative;
+  left: 0;
   padding: 0 0 0 0;
-  width: 16rem;
   background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   header {
+    @include transition($global-transition);
+    @media screen and (max-width: 1024px) { left: -50px; opacity: 0; }
     text-align: center;
     color: rgba(white, .5);
     text-shadow: $global-shadow;
@@ -99,9 +132,89 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .navitem {
+
   a {
+    @include display(flex);
+    @include flex-direction(column);
+    @include transition($global-transition);
+    @include linear-gradient(90deg, rgba(black, .25), rgba(black, 0));
+    @media screen and (max-width: 1024px) { width: 3rem; overflow-x: hidden; }
+    background-position: -15rem;
+    background-repeat: no-repeat;
+    padding: .5rem 0;
     color: rgba(white, .8);
     text-decoration: none;
+    width: 15rem;
+    background-color: transparent;
+    text-shadow: $global-shadow;
+    font-weight: 300;
+
+    .navitem-wrapper {
+      @include display(flex);
+
+      .icon-wrapper {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        opacity: .8;
+        width: 3rem;
+
+        .icon {
+          max-width: 24px;
+          filter: drop-shadow($global-shadow);
+        }
+      }
+
+      .navitem-title {
+        @media screen and (max-width: 1024px) { display: none; }
+        @include display(flex);
+        @include align-items(center);
+      }
+    }
+
+    .navitem-border {
+      @include transition($global-transition);
+      position: relative;
+      top: .5rem;
+      float: left;
+      display: block;
+      height: 2px;
+      background: rgba(white, .8);
+      width: 100%;
+      box-shadow: $global-shadow;
+
+      &:after {
+        @include transition($global-transition);
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 2px;
+        height: 4px;
+        background: rgba(white, .8);
+        bottom: calc(1rem - 1px);
+        left: calc(15rem - 2px);
+      }
+    }
+
+    &:hover {
+      @include transition($global-transition);
+      color: rgba(white, 1);
+      background-position: 0px;
+      background-color: rgba(black, .05);
+      text-shadow: 0 0 3px rgba(white, .75);
+      // font-weight: 700;
+
+      .navitem-border {
+        background: #09f;
+        &:after {
+          background: #09f;
+        }
+      }
+
+      .icon-wrapper {
+        opacity: 1;
+      }
+    }
   }
 
   &.settings {
@@ -115,7 +228,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .activity-bar {
+  &.collapsed {
+    width: .5rem;
+    background-color: rgba(black, .75);
+  }
+  &.extended {
+    width: 18rem;
+  }
+  @include transition($global-transition);
   @include linear-gradient(90deg, rgba(black, 0), rgba(black, .5));
-  width: 18rem;
   background-color: rgba(black, .25);
 }

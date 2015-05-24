@@ -2,7 +2,15 @@
 <html lang="en">
   <head>
       <meta charset="UTF-8">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
       <link rel="stylesheet" href="css/main.css">
+      <script src="assets/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+      <!-- Web components! -->
+      <link rel="import" href="assets/bower_components/polymer/polymer.html">
+      <link rel="import" href="assets/bower_components/iron-icons/iron-icons.html">
+      <link rel="import" href="assets/bower_components/iron-icons/maps-icons.html">
+      <link rel="import" href="assets/bower_components/iron-icons/social-icons.html">
   </head>
   <body>
     <div class="app">
@@ -12,62 +20,86 @@
           <div class="window-control min"></div>
           <div class="window-control max"></div>
         </div>
-        <h1 class="title">Spectre</h1>
+        <h1 class="title"></h1>
       </div>
       <section class="content">
         <nav class="navbar">
           <header>NAVIGATION</header>
           <div class="navitem dashboard">
             <a href="#">
-              <span class="icon"><img src="" alt="Dashboard Icon" /></span>
-              Dashboard
+              <span class="navitem-wrapper">
+                <span class="icon-wrapper"><iron-icon icon="dashboard" class="icon"></iron-icon></span>
+                <span class="navitem-title">Dashboard</span>
+              </span>
+              <span class="navitem-border"></span>
             </a>
           </div>
           <div class="navitem stats">
             <a href="#">
-              <span class="icon"><img src="" alt="Stats Icon" /></span>
-              Stats
+              <span class="navitem-wrapper">
+                <span class="icon-wrapper"><iron-icon icon="trending-up" class="icon"></span>
+                <span class="navitem-title">Stats</span>
+              </span>
+              <span class="navitem-border"></span>
             </a>
           </div>
           <div class="navitem vendors">
             <a href="#">
-              <span class="icon"><img src="" alt="Vendors Icon" /></span>
-              Vendors
+              <span class="navitem-wrapper">
+                <span class="icon-wrapper"><iron-icon icon="maps:local-atm" class="icon"></span>
+                <span class="navitem-title">Vendors</span>
+              </span>
+              <span class="navitem-border"></span>
             </a>
           </div>
           <div class="navitem grimoire">
             <a href="#">
-              <span class="icon"><img src="" alt="Grimoire Icon" /></span>
-              Grimoire
+              <span class="navitem-wrapper">
+                <span class="icon-wrapper"><iron-icon icon="maps:layers" class="icon"></span>
+                <span class="navitem-title">Grimoire</span>
+              </span>
+              <span class="navitem-border"></span>
             </a>
           </div>
           <div class="navitem clan">
             <a href="#">
-              <span class="icon"><img src="" alt="Clan Icon" /></span>
-              Clan
+              <span class="navitem-wrapper">
+                <span class="icon-wrapper"><iron-icon icon="bookmark" class="icon"></span>
+                <span class="navitem-title">Clan</span>
+              </span>
+              <span class="navitem-border"></span>
             </a>
           </div>
           <div class="navitem groups">
             <a href="#">
-              <span class="icon"><img src="" alt="Groups Icon" /></span>
-              Groups
+              <span class="navitem-wrapper">
+                <span class="icon-wrapper"><iron-icon icon="social:group" class="icon"></span>
+                <span class="navitem-title">Groups</span>
+              </span>
+              <span class="navitem-border"></span>
             </a>
           </div>
           <div class="navitem friends">
             <a href="#">
-              <span class="icon"><img src="" alt="Friends Icon" /></span>
-              Friends
+              <span class="navitem-wrapper">
+                <span class="icon-wrapper"><iron-icon icon="face" class="icon"></span>
+                <span class="navitem-title">Friends</span>
+              </span>
+              <span class="navitem-border"></span>
             </a>
           </div>
           <div class="navitem settings">
             <a href="#">
-              <span class="icon"><img src="" alt="Settings Icon"></span>
-              Settings
+              <span class="navitem-wrapper">
+                <span class="icon-wrapper"><iron-icon icon="settings" class="icon"></span>
+                <span class="navitem-title">Settings</span>
+              </span>
+              <span class="navitem-border"></span>
             </a>
           </div>
         </nav>
         <section class="main-content"></section>
-        <aside class="activity-bar"></aside>
+        <aside class="activity-bar extended"></aside>
       </section>
     </div>
     <script type="text/javascript">
