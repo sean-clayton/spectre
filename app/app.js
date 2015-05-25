@@ -61,6 +61,13 @@
 
   // Activity bar clicking
 
-  // var activityBar = document.querySelector('.activity-bar');
-  // activityBar
+  var activityBar = document.querySelector('.activity-bar');
+  activityBar.addEventListener('transitioned', function() {
+    console.log('hello!');
+  });
+
+  var navBar = document.getElementsByClassName('navbar')[0];
+  navBar.addEventListener('transitionend', function() {
+    console.log('hello! transitioned!');
+  })
 })();
