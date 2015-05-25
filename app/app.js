@@ -63,11 +63,11 @@
 
   var activityBar = document.querySelector('.activity-bar');
   activityBar.addEventListener('transitioned', function() {
-    console.log('hello!');
+    // console.log('hello!');
   });
 
   var navBar = document.getElementsByClassName('navbar')[0];
   navBar.addEventListener('transitionend', function() {
-    console.log('hello! transitioned!');
+    // console.log('hello! transitioned!');
   })
 })();

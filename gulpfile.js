@@ -25,9 +25,15 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('copy', function () {
+  gulp.start(['bower']);
   return gulp.src(['app/index.html', 'app/index.js', 'package.json', 'app/app.js', 'config.json'])
     .pipe(gulp.dest('dist/app'));
 });
+
+gulp.task('bower', function() {
+  return gulp.src(['app/assets/**/*'])
+    .pipe(gulp.dest('dist/app/assets'));
+})
 
 gulp.task('asar', function () {
   return asar.createPackage('dist/app/', 'dist/app.asar', function () {
