@@ -79,7 +79,7 @@ gulp.task('default', function () {
   console.log('Run `gulp watch` or `gulp build`');
 });
 
-gulp.task('electron-darwin', function() {
+gulp.task('electron-darwin', ['build'], function() {
   return gulp.src('dist/app/**')
     .pipe(electron({
       version: config.electron.version,
@@ -88,7 +88,7 @@ gulp.task('electron-darwin', function() {
     .pipe(electron.zfsdest('build/spectre-darwin.zip'));
 });
 
-gulp.task('electron-win', function() {
+gulp.task('electron-win', ['build'], function() {
   return gulp.src('dist/app/**')
     .pipe(electron({
       version: config.electron.version,
@@ -99,7 +99,7 @@ gulp.task('electron-win', function() {
     .pipe(electron.zfsdest('build/spectre-win32.zip'));
 });
 
-gulp.task('electron-linux', function() {
+gulp.task('electron-linux', ['build'], function() {
   return gulp.src('dist/app/**')
     .pipe(electron({
       version: config.electron.version,
