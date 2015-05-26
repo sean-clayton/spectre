@@ -13,6 +13,9 @@ var sass = require('gulp-sass');
 var shell = require('gulp-shell');
 var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
+var electron = require('gulp-atom-electron');
+var config = require('./config');
+var zlib = require('zlib');
 
 var o = {
   scss: 'app/styles/*.scss',
@@ -76,3 +79,31 @@ gulp.task('default', function () {
   console.log('Run `gulp watch` or `gulp build`');
 });
 
+gulp.task('electron-darwin', function() {
+  return gulp.src('dist/app/**')
+    .pipe(electron({
+      version: config.electron.version,
+      platform: 'darwin'
+    }))
+    .pipe(electron.zfsdest('build/spectre-darwin.zip'));
+});
+
+gulp.task('electron-win', function() {
+  return gulp.src('dist/app/**')
+    .pipe(electron({
+      version: config.electron.version,
+      companyName: config.electron.companyName,
+      copyright: config.electron.copyright,
+      platform: 'win32'
+    }))
+    .pipe(electron.zfsdest('build/spectre-win32.zip'));
+});
+
+gulp.task('electron-linux', function() {
+  return gulp.src('dist/app/**')
+    .pipe(electron({
+      version: config.electron.version,
+      platform: 'linux'
+    }))
+    .pipe(electron.zfsdest('build/spectre-linux.zip'));
+});
