@@ -21,6 +21,7 @@ Binaries can be found in the [release page](https://github.com/sean-clayton/spec
 │   └── styles
 │       ├── darwin.scss
 │       └── main.scss
+├── build
 ├── dist
 ├── bower.json
 ├── config.json
@@ -39,7 +40,7 @@ Install the following in this order:
 - [Gulp](http://gulpjs.com)
 - [Bower](http://bower.io)
 
-##### Building Spectre
+##### Developing Spectre
 
 1. Clone the repo
   - `git clone git@github.com:sean-clayton/spectre.git`
@@ -55,3 +56,19 @@ Install the following in this order:
     - Launches an [Electron](https://github.com/atom/electron) instance with `dist` as its source. *Requires `gulp build` to be ran!*
   - `gulp watch`
     - Builds Spectre and launches Electron. Watches for file changes in the `app` folder, then refreshes Electron.
+
+##### Building Spectre
+
+1. Clone the repo
+  - `git clone git@github.com:sean-clayton/spectre.git`
+1. `cd` into the directory
+  - `cd spectre`
+1. Install dependencies
+  - `npm i`
+  - `bower i`
+1. Run the build tool
+  - `gulp build`
+1. Build for your platform
+  - `gulp electron-[darwin/win/linux]` darwin = OS X, win = Windows, linux = Linux
+
+Your build will be in the `build` folder.
