@@ -3,6 +3,8 @@
   "electron": {
     "version": "0.26.1",
     "companyName": "Spectre",
-    "copyright": "Copyright 2015 Spectre"
+    "copyright": "Copyright 2015 Spectre",
+    "winIcon": "spectre.ico",
+    "darwinIcon": "spectre.icns"
   }
 }
