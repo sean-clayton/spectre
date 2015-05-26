@@ -69,7 +69,7 @@ Install the following in this order:
 1. Run the build tool
   - `gulp build`
 1. Build for your platform
-  - `gulp electron-[darwin/win/linux]` darwin = OS X, win = Windows, linux = Linux
+  - `gulp electron-darwin|win|linux` darwin = OS X, win = Windows, linux = Linux
 
 Your build will be in the `build` folder.
 
