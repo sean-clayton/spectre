@@ -85,7 +85,7 @@ gulp.task('electron-darwin', function() {
       version: config.electron.version,
       platform: 'darwin'
     }))
-    .pipe(electron.zfsdest('build/darwin.zip'));
+    .pipe(electron.zfsdest('build/spectre-darwin.zip'));
 });
 
 gulp.task('electron-win', function() {
@@ -96,10 +96,14 @@ gulp.task('electron-win', function() {
       copyright: config.electron.copyright,
       platform: 'win32'
     }))
-    .pipe(electron.zfsdest('build/win32.zip'));
+    .pipe(electron.zfsdest('build/spectre-win32.zip'));
 });
 
-gulp.task('unzip', function() {
-  return gulp.src('build/*.zip')
-    .pipe(zlib.createUnzip());
-})
+gulp.task('electron-linux', function() {
+  return gulp.src('dist/app/**')
+    .pipe(electron({
+      version: config.electron.version,
+      platform: 'linux'
+    }))
+    .pipe(electron.zfsdest('build/spectre-linux.zip'));
+});
