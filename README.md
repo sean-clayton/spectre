@@ -73,7 +73,7 @@ Install the following in this order:
 
 Your build will be in the `build` folder.
 
-### LICENSE (ISC)
+### [LICENSE (ISC)](LICENSE)
 
 Copyright (c) 2015, Sean-Patrick Ortencio Clayton <sean@seanclayton.me>
 
